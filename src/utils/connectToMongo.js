@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 function connectToMongo() {
-  mongoose.connect(process.env.MONGO_URL, async function (err, client) {
+  mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true }, async function (err, client) {
     if (err) {
       console.log('> Error connecting to DB:', err.message);
     }

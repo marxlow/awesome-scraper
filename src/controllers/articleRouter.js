@@ -1,11 +1,11 @@
 import express from 'express';
-import ArticleService from '../services/crawler';
+import Crawler from '../services/crawler';
 
 let articleRouter = express.Router();
 
 articleRouter.get('/crawl', async (req, res) => {
   try {
-    const crawler = await Crawler.scrape.getAll();
+    const crawler = await Crawler.scrape.getAndSaveFromSites();
     // For CORS. 
     res.set({
       'Content-Type': 'application/json',

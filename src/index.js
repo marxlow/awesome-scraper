@@ -23,7 +23,7 @@ app.listen(process.env.PORT, async (error) => {
     console.log('> Server is ready & is running on production!');
   }
 
-  // await connectToMongo();
+  await connectToMongo();
 })
 
 // To keep Heroku App alive
